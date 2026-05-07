@@ -20,6 +20,10 @@
     padding: 20px;
     flex-direction: column;
     gap: 20px;
+    text-align: center;
+    @media (max-width:430px) {
+        padding-bottom: 100px;
+    }
 h1 {
     background: linear-gradient(135deg, #f1f5f9 0%, #22d3ee 50%, #0ea5e9 100%);
     -webkit-background-clip: text;
