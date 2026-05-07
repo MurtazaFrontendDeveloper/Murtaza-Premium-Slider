@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Container {
+    width: 100%;
+    height: 100vh;
+    background:radial-gradient(circle at 15% 25%, rgba(0,255,255,0.14), transparent 28%),
+        radial-gradient(circle at 85% 80%, rgba(34,211,238,0.16), transparent 30%),
+        radial-gradient(circle at center, rgba(255,255,255,0.03), transparent 55%),
+        linear-gradient(135deg, #020617 0%, #0b1120 38%, #111827 68%, #0f172a 100%);
+        border: 1px solid rgba(255,255,255,0.06);
+        backdrop-filter: blur(24px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+h1 {
+    background: linear-gradient(135deg, #f1f5f9 0%, #22d3ee 50%, #0ea5e9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 25px rgba(34,211,238,0.25);
+}
+}
+
+.slider-Container {
+    /* Using max-width for responsiveness */
+    width: 100%;
+    max-width: 600px; 
+    aspect-ratio: 5 / 3; /* Keeps the ratio consistent */
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.img-container {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* Ensure images fit the responsive container */
+.img-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0; /* Prevents images from squishing */
+}
+
+/* Styling the buttons */
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Glass effect */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 10;
+}
+
+.btn:hover {
+    background: white;
+    color: #121212;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.btn.next { right: 15px; }
+.btn.prev { left: 15px; }
+
+/* --- RESPONSIVENESS --- */
+
+@media (max-width: 650px) {
+    .slider-Container {
+        max-width: 95%; /* Use more screen width on mobile */
+    }
+    
+    .btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
